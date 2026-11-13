@@ -1,19 +1,15 @@
-/* ==========================================================
-   Feuille de style commune à toutes les pages
-   ========================================================== */
 
-/* ---------- Couleurs et réglages généraux ---------- */
 :root {
-  --menu-fond: #39215f;          /* violet du menu de gauche */
-  --menu-carte: #4a3175;         /* carte « Mode hors ligne » */
-  --menu-actif: #7b55b0;         /* élément actif du menu */
-  --violet: #7b4fb3;             /* couleur principale */
-  --violet-clair: #eee5f8;       /* fonds d'icônes */
-  --lavande: #f3edf9;            /* bandeau d'accueil */
-  --lavande-2: #eee8f6;          /* bandeau sécurité */
+  --menu-fond: #39215f;          
+  --menu-carte: #4a3175;         
+  --menu-actif: #7b55b0;         
+  --violet: #7b4fb3;             
+  --violet-clair: #eee5f8;       
+  --lavande: #f3edf9;            
+  --lavande-2: #eee8f6;          
   --vert: #3fbf8a;
   --vert-clair: #e7f5ef;
-  --fond: #f6f5fb;               /* fond des pages */
+  --fond: #f6f5fb;               
   --blanc: #ffffff;
   --texte: #2b1a45;
   --texte-doux: #8a8299;
@@ -44,7 +40,6 @@ svg {
   flex-shrink: 0;
 }
 
-/* Petit titre en majuscules espacées (ex. « MENU PRINCIPAL ») */
 .surtitre {
   font-size: 11px;
   font-weight: 700;
@@ -52,15 +47,13 @@ svg {
   text-transform: uppercase;
 }
 
-/* ---------- Mise en page : menu à gauche + contenu ---------- */
+
 .app {
   display: flex;
   min-height: 100vh;
 }
 
-/* ==========================================================
-   MENU DE GAUCHE
-   ========================================================== */
+
 .sidebar {
   width: 242px;
   background: var(--menu-fond);
@@ -177,9 +170,6 @@ svg {
   line-height: 1.5;
 }
 
-/* ==========================================================
-   PARTIE PRINCIPALE
-   ========================================================== */
 .principal {
   flex: 1;
   padding: 18px 44px 20px;
@@ -189,7 +179,6 @@ svg {
   min-width: 0;
 }
 
-/* ---------- Barre du haut ---------- */
 .barre-haut {
   display: flex;
   align-items: center;
@@ -230,7 +219,6 @@ svg {
   font-weight: 500;
 }
 
-/* Compte du médecin + menu déroulant */
 .compte {
   position: relative;
 }
@@ -299,7 +287,6 @@ svg {
   background: #fdeeee;
 }
 
-/* ---------- Bandeau d'accueil ---------- */
 .bienvenue {
   background: linear-gradient(90deg, var(--lavande) 0%, #f7f4fc 100%);
   border: 1px solid var(--bordure);
@@ -342,7 +329,6 @@ svg {
   width: auto;
   max-width: 50%;
   object-fit: contain;
-  /* Bords de l'image fondus pour qu'elle se mélange au bandeau */
   -webkit-mask-image:
     linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%),
     linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
@@ -353,7 +339,6 @@ svg {
   mask-composite: intersect;
 }
 
-/* ---------- Cartes ---------- */
 .carte {
   background: var(--blanc);
   border: 1px solid var(--bordure);
@@ -367,7 +352,6 @@ svg {
   gap: 22px;
 }
 
-/* Cartes de statistiques */
 .stat {
   padding: 22px 24px 24px;
 }
@@ -411,7 +395,7 @@ svg {
   transition: width 0.4s;
 }
 
-/* Titre de section « Actions rapides » */
+
 .titre-section h3 {
   font-size: 18px;
   font-weight: 700;
@@ -423,7 +407,7 @@ svg {
   margin-top: 6px;
 }
 
-/* Cartes d'action */
+
 .action {
   display: flex;
   align-items: center;
@@ -461,7 +445,6 @@ svg {
   margin-top: 6px;
 }
 
-/* Bandeau sécurité */
 .securite {
   background: var(--lavande-2);
   border: 1px solid var(--bordure);
@@ -498,7 +481,6 @@ svg {
   line-height: 1.6;
 }
 
-/* Pied de page */
 .pied-page {
   text-align: center;
   font-size: 11.5px;
@@ -507,7 +489,6 @@ svg {
   padding-top: 10px;
 }
 
-/* ---------- Pages vides ---------- */
 .page-vide {
   flex: 1;
   display: flex;
@@ -540,7 +521,6 @@ svg {
   color: var(--texte-doux);
 }
 
-/* ---------- Petits écrans (tablette verticale) ---------- */
 @media (max-width: 1000px) {
   .principal {
     padding: 18px 22px;
