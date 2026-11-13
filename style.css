@@ -1,0 +1,556 @@
+/* ==========================================================
+   Feuille de style commune à toutes les pages
+   ========================================================== */
+
+/* ---------- Couleurs et réglages généraux ---------- */
+:root {
+  --menu-fond: #39215f;          /* violet du menu de gauche */
+  --menu-carte: #4a3175;         /* carte « Mode hors ligne » */
+  --menu-actif: #7b55b0;         /* élément actif du menu */
+  --violet: #7b4fb3;             /* couleur principale */
+  --violet-clair: #eee5f8;       /* fonds d'icônes */
+  --lavande: #f3edf9;            /* bandeau d'accueil */
+  --lavande-2: #eee8f6;          /* bandeau sécurité */
+  --vert: #3fbf8a;
+  --vert-clair: #e7f5ef;
+  --fond: #f6f5fb;               /* fond des pages */
+  --blanc: #ffffff;
+  --texte: #2b1a45;
+  --texte-doux: #8a8299;
+  --bordure: #ece8f3;
+  --ombre: 0 4px 18px rgba(57, 33, 95, 0.05);
+  --rayon: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Poppins", Arial, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+/* Petit titre en majuscules espacées (ex. « MENU PRINCIPAL ») */
+.surtitre {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ---------- Mise en page : menu à gauche + contenu ---------- */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==========================================================
+   MENU DE GAUCHE
+   ========================================================== */
+.sidebar {
+  width: 242px;
+  background: var(--menu-fond);
+  color: var(--blanc);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--menu-actif);
+  display: grid;
+  place-items: center;
+  margin-bottom: 44px;
+}
+
+.logo svg {
+  width: 34px;
+  height: 34px;
+}
+
+.sidebar .surtitre {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 14px 12px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.88);
+  transition: background 0.2s;
+}
+
+.menu a svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu a.actif {
+  background: var(--menu-actif);
+  color: var(--blanc);
+}
+
+/* Carte « Mode hors ligne » */
+.carte-hors-ligne {
+  margin-top: auto;
+  background: var(--menu-carte);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 14px 14px 16px;
+}
+
+.carte-hors-ligne .titre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.point-vert {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--vert);
+  display: inline-block;
+}
+
+.carte-hors-ligne p {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+.carte-hors-ligne .etiquette {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 11.5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.pied-menu {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   PARTIE PRINCIPALE
+   ========================================================== */
+.principal {
+  flex: 1;
+  padding: 18px 44px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+/* ---------- Barre du haut ---------- */
+.barre-haut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.statut-synchro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.carre-icone {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--violet-clair);
+  color: var(--violet);
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.carre-icone svg {
+  width: 20px;
+  height: 20px;
+}
+
+.statut-synchro .libelle {
+  font-size: 12px;
+  color: var(--texte-doux);
+}
+
+.statut-synchro .valeur {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Compte du médecin + menu déroulant */
+.compte {
+  position: relative;
+}
+
+.compte-bouton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--texte);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--violet-clair);
+  color: var(--violet);
+  display: grid;
+  place-items: center;
+}
+
+.compte-bouton .fleche {
+  color: var(--texte-doux);
+  transition: transform 0.2s;
+}
+
+.compte.ouvert .fleche {
+  transform: rotate(180deg);
+}
+
+.menu-deroulant {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(57, 33, 95, 0.12);
+  padding: 6px;
+  min-width: 190px;
+  z-index: 10;
+}
+
+.compte.ouvert .menu-deroulant {
+  display: block;
+}
+
+.menu-deroulant a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #c0392b;
+}
+
+.menu-deroulant a:hover {
+  background: #fdeeee;
+}
+
+/* ---------- Bandeau d'accueil ---------- */
+.bienvenue {
+  background: linear-gradient(90deg, var(--lavande) 0%, #f7f4fc 100%);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 30px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 176px;
+  overflow: hidden;
+}
+
+.bienvenue > div {
+  flex-shrink: 0;
+}
+
+.bienvenue .surtitre {
+  color: var(--violet);
+}
+
+.bienvenue h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.bienvenue h2 span {
+  color: var(--violet);
+}
+
+.bienvenue p {
+  font-size: 14px;
+  color: var(--texte-doux);
+  margin-top: 10px;
+}
+
+.bienvenue img {
+  height: 140px;
+  width: auto;
+  max-width: 50%;
+  object-fit: contain;
+  /* Bords de l'image fondus pour qu'elle se mélange au bandeau */
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* ---------- Cartes ---------- */
+.carte {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* Cartes de statistiques */
+.stat {
+  padding: 22px 24px 24px;
+}
+
+.stat .entete {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--texte-doux);
+}
+
+.stat .valeur {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.stat .libelle {
+  font-size: 12.5px;
+  color: var(--texte-doux);
+  margin-top: 8px;
+}
+
+.icone-vert {
+  background: var(--vert-clair);
+  color: var(--vert);
+}
+
+.barre-progression {
+  margin-top: 14px;
+  height: 6px;
+  background: #efedf2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barre-progression div {
+  height: 100%;
+  background: var(--violet);
+  border-radius: 999px;
+  transition: width 0.4s;
+}
+
+/* Titre de section « Actions rapides » */
+.titre-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.titre-section p {
+  font-size: 13px;
+  color: var(--texte-doux);
+  margin-top: 6px;
+}
+
+/* Cartes d'action */
+.action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 18px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(57, 33, 95, 0.10);
+}
+
+.action .carre-icone {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  cursor: inherit;
+}
+
+.action strong {
+  display: block;
+  font-size: 14.5px;
+  color: var(--texte);
+}
+
+.action span.detail {
+  display: block;
+  font-size: 12px;
+  color: var(--texte-doux);
+  margin-top: 6px;
+}
+
+/* Bandeau sécurité */
+.securite {
+  background: var(--lavande-2);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.securite .carre-icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #dccdee;
+  cursor: default;
+}
+
+.securite .carre-icone svg {
+  width: 26px;
+  height: 26px;
+}
+
+.securite h4 {
+  font-size: 15px;
+}
+
+.securite p {
+  font-size: 12.5px;
+  color: var(--texte-doux);
+  margin-top: 8px;
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+/* Pied de page */
+.pied-page {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--texte-doux);
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+/* ---------- Pages vides ---------- */
+.page-vide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 50px;
+}
+
+.page-vide .carre-icone {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  cursor: default;
+}
+
+.page-vide .carre-icone svg {
+  width: 32px;
+  height: 32px;
+}
+
+.page-vide h2 {
+  font-size: 24px;
+}
+
+.page-vide p {
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+
+/* ---------- Petits écrans (tablette verticale) ---------- */
+@media (max-width: 1000px) {
+  .principal {
+    padding: 18px 22px;
+  }
+
+  .deux-colonnes {
+    grid-template-columns: 1fr;
+  }
+
+  .bienvenue img {
+    display: none;
+  }
+}
